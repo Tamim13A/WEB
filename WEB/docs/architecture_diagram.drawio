@@ -1,0 +1,164 @@
+<mxfile host="app.diagrams.net" modified="2026-11-07" agent="5.0 (Windows)" etag="cis324-architecture" version="24.2.5" type="device">
+  <diagram id="architecture" name="Architecture Diagram">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Browser -->
+        <mxCell id="browser" value="🌐 Browser (Client)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1976d2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="200" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- HTML/CSS/JS -->
+        <mxCell id="frontend" value="Frontend\nHTML5 • CSS3 • JavaScript\nFetch API / AJAX" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#3f51b5;" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="200" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Internet/WWW -->
+        <mxCell id="internet" value="Internet / WWW\nHTTP/HTTPS Request/Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#f57c00;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="220" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- Web Server -->
+        <mxCell id="webserver" value="Web Server\nApache / Nginx\nmod_rewrite • Static Assets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c2185b;" vertex="1" parent="1">
+          <mxGeometry x="580" y="50" width="200" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Front Controller -->
+        <mxCell id="frontcontroller" value="Front Controller\npublic/index.php\nBootstrap • Session Start" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;" vertex="1" parent="1">
+          <mxGeometry x="580" y="180" width="200" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- Router -->
+        <mxCell id="router" value="Router\nURL Parsing • Route Matching\nMiddleware Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2f1;strokeColor=#00695c;" vertex="1" parent="1">
+          <mxGeometry x="850" y="50" width="200" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Controller -->
+        <mxCell id="controller" value="Controller\nAuthController\nPropertyController\nInquiryController\nApiController\nDashboardController\nAdminController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2f1;strokeColor=#00695c;" vertex="1" parent="1">
+          <mxGeometry x="850" y="180" width="200" height="150" as="geometry"/>
+        </mxCell>
+        
+        <!-- Model -->
+        <mxCell id="model" value="Model Layer\nUser • Property • Inquiry\nPropertyImage • Favourite\nPropertyCategory\nBase Model (CRUD)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f9a825;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="50" width="220" height="150" as="geometry"/>
+        </mxCell>
+        
+        <!-- Database -->
+        <mxCell id="database" value="MySQL Database\nPDO Connection\nPrepared Statements\n6 Tables • PK/FK • 3NF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fbe9e7;strokeColor=#e64a19;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="230" width="220" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- View -->
+        <mxCell id="view" value="View Templates\nLayout (header/footer)\nProperty Cards\nDashboard Pages\nAuth Forms\nError Pages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;" vertex="1" parent="1">
+          <mxGeometry x="850" y="360" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Response -->
+        <mxCell id="response" value="Response\nHTML / JSON\nSecurity Headers\nCSP • HSTS • X-Frame" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#3f51b5;" vertex="1" parent="1">
+          <mxGeometry x="580" y="300" width="200" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- Security Layer -->
+        <mxCell id="security" value="Security Layer\nCSRF • XSS • SQLi Protection\nPassword Hashing (Argon2id)\nRBAC • Session Hardening" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#c62828;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="250" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- File Storage -->
+        <mxCell id="filestorage" value="File Storage\npublic/assets/images/uploads/\nProperty Images\nSecure Naming • Validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;" vertex="1" parent="1">
+          <mxGeometry x="350" y="300" width="200" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Connections -->
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#1976d2;strokeWidth=2;" edge="1" parent="1" source="browser" target="frontend">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#f57c00;strokeWidth=2;" edge="1" parent="1" source="frontend" target="internet">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="210" as="sourcePoint"/>
+            <mxPoint x="300" y="140" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#f57c00;strokeWidth=2;" edge="1" parent="1" source="internet" target="webserver">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#c2185b;strokeWidth=2;" edge="1" parent="1" source="webserver" target="frontcontroller">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" edge="1" parent="1" source="frontcontroller" target="router">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#00695c;strokeWidth=2;" edge="1" parent="1" source="router" target="controller">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#f9a825;strokeWidth=2;" edge="1" parent="1" source="controller" target="model">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#e64a19;strokeWidth=2;" edge="1" parent="1" source="model" target="database">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="controller" target="view">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#3f51b5;strokeWidth=2;" edge="1" parent="1" source="controller" target="response">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="controller" target="filestorage">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="280" as="sourcePoint"/>
+            <mxPoint x="450" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" edge="1" parent="1" source="security" target="controller">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" edge="1" parent="1" source="security" target="model">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="conn14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#1976d2;strokeWidth=2;" edge="1" parent="1" source="response" target="internet">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="380" as="sourcePoint"/>
+            <mxPoint x="410" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#1976d2;strokeWidth=2;" edge="1" parent="1" source="internet" target="browser">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="100" as="sourcePoint"/>
+            <mxPoint x="150" y="90" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- User Roles Legend -->
+        <mxCell id="roles" value="User Roles & Access\n\n👑 Admin: Full system access\n• User/Property/Inquiry management\n• Approve/Reject properties\n• System statistics\n\n🏢 Agent: Property owner\n• CRUD own properties\n• Respond to inquiries\n• Upload images\n\n👤 Customer: Buyer/Tenant\n• Browse & search properties\n• Save favourites\n• Submit inquiries\n• View inquiry history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#757575;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="450" width="350" height="250" as="geometry"/>
+        </mxCell>
+        
+        <!-- Data Flow Legend -->
+        <mxCell id="dataflow" value="Request-Response Flow\n\n1. Browser → HTTP Request → Web Server\n2. index.php boots application\n3. Router matches URL → Controller\n4. Middleware: Auth • CSRF • Role\n5. Controller calls Model\n6. Model → PDO Prepared Statement → MySQL\n7. Database returns result set\n8. Model returns data to Controller\n9. Controller → View (HTML) or JSON Response\n10. Response → Security Headers → Browser\n\n🔒 Security at every layer:\n• Prepared Statements (SQLi)\n• htmlspecialchars (XSS)\n• password_hash (Argon2id)\n• session_regenerate_id (Fixation)\n• CSRF Tokens (CSRF)\n• RBAC Middleware (AuthZ)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#757575;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="450" width="400" height="300" as="geometry"/>
+        </mxCell>
+        
+        <!-- Tech Stack -->
+        <mxCell id="techstack" value="Technology Stack\n\nFrontend: HTML5, CSS3, JavaScript (ES6+)\nBackend: PHP 8.1+ (MVC - No Framework)\nDatabase: MySQL 8.0+ (PDO)\nAPI: JSON REST + Fetch API\nAuth: Sessions + Argon2id\nSecurity: CSP, CSRF, RBAC\nServer: Apache/Nginx + mod_rewrite\n\nAssignment Requirements:\n✅ 5+ Functional Pages\n✅ 3+ Related Tables (6 tables)\n✅ CRUD on 2+ Entities\n✅ Prepared Statements\n✅ Server-side Validation\n✅ 3 Threat Analyses\n✅ JSON API + Fetch\n✅ Session Hardening (2+)\n✅ PHP MVC Implementation\n✅ ER & Architecture Diagrams" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="450" width="350" height="300" as="geometry"/>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
