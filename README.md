@@ -1,2 +1,0 @@
-# WEB
-semester project
